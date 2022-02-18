@@ -1,19 +1,20 @@
 import styled from "styled-components";
 import Header from "./components/Header";
 import Home from "./components/Home";
+import About from "./components/About";
+import Disease from "./components/Diseases";
+import Service from "./components/Service";
+import Tests from "./components/Tests";
 
 function App() {
   return (
     <Wrapper>
-      {/* header */}
       <Header />
-      {/* home */}
       <Home />
-      {/* about */}
-      {/* diseases */}
-      {/* services */}
-      {/* tests */}
-      {/* footer */}
+      <About />
+      <Disease />
+      <Service />
+      <Tests />
     </Wrapper>
   );
 }
