@@ -1,21 +1,25 @@
-import Header from "./components/Header";
-import BgVideo from "./components/BgVideo";
 import styled from "styled-components";
+import Header from "./components/Header";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <FrontWrap>
-        <BgVideo />
-        <Header />
-      </FrontWrap>
-    </div>
+    <Wrapper>
+      {/* header */}
+      <Header />
+      {/* home */}
+      <Home />
+      {/* about */}
+      {/* diseases */}
+      {/* services */}
+      {/* tests */}
+      {/* footer */}
+    </Wrapper>
   );
 }
 
-const FrontWrap = styled.div`
-  height: auto;
-  min-height: 100vh;
+const Wrapper = styled.div`
+  text-align: center;
 `;
 
 export default App;
