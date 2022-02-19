@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../assets/Logo.png";
-import { Search, Facebook, WhatsApp, YouTube } from "@material-ui/icons/";
+import Home from "../Home";
+import logo from "../../assets/e-Medicine.Uz.png";
+import {
+  Search,
+  Facebook,
+  WhatsApp,
+  YouTube,
+  Telegram,
+  Person,
+} from "@material-ui/icons/";
 
 const Header = () => {
   return (
@@ -22,28 +30,44 @@ const Header = () => {
               </div>
             </div>
             <div className="offers">
-              <a href="">Request Appointment</a>
+              <a href={<Home />}>Request Appointment</a>
               <a href="">Find a Doctor</a>
               <a href="">Find a Job</a>
               <a href="">Give New</a>
             </div>
             <div className="social">
-              <div className="sign-in">user</div>
-              <div className="languages">Lan</div>
+              <div className="sign-in">
+                <Person />
+                <span>sign in</span>
+              </div>
+              <div className="languages">
+                <label for="cars">language: </label>
+                <select id="cars" name="cars">
+                  <option value="english">English</option>
+                  <option value="german">Deutsch</option>
+                  <option value="russian">Russian</option>
+                  <option value="uzbek">Uzbek</option>
+                </select>
+              </div>
               <ul>
                 <li>
-                  <a href="">
+                  <a href="https://facebook.com">
                     <Facebook />
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="https://whatsapp.com">
                     <WhatsApp />
                   </a>
                 </li>
                 <li>
-                  <a href="">
+                  <a href="https://youtube.com">
                     <YouTube />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://web.telegram.org">
+                    <Telegram />
                   </a>
                 </li>
               </ul>
@@ -71,12 +95,13 @@ const TopBar = styled.div`
   img {
     height: auto;
     width: 8rem;
+    /* border: 1px solid blue; */
   }
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5rem;
+    padding: 0 10rem;
     color: black;
     /* & > div {
       border: 1px solid black;
@@ -91,12 +116,12 @@ const TopBar = styled.div`
   }
 
   .nav-elements {
-    flex: 2;
+    flex: 4;
     display: flex;
     justify-content: space-between;
 
     & > .input-container {
-      width: 24rem;
+      width: 30rem;
       border: 2px solid #0060b1;
       display: flex;
       justify-content: space-between;
@@ -137,15 +162,36 @@ const TopBar = styled.div`
       justify-content: space-between;
       font-size: 13px;
       height: auto;
+      border-left: 1px solid #2895f1;
+      padding-left: 1rem;
+
       & > a {
         text-decoration: none;
         letter-spacing: 0.5px;
       }
     }
+
+    .social {
+      border-left: 1px solid #2895f1;
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > .sign-in {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 6rem;
+        padding-right: 1rem;
+        cursor: pointer;
+      }
+    }
+
     .social > ul {
       display: flex;
-      justify-content: space-around;
-      width: 5rem;
+      justify-content: space-between;
+      width: 7rem;
     }
 
     .social > ul > li {
@@ -165,10 +211,12 @@ const BottomBar = styled.div`
     justify-content: center;
     list-style-type: none;
 
+    /* animation */
+
     & > li {
       padding: 1.5% 3%;
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       cursor: pointer;
       transition: 0.2s;
     }
@@ -176,6 +224,7 @@ const BottomBar = styled.div`
     & > li:hover {
       background-color: rgb(250, 250, 250);
       color: #2895f1;
+      transform: scale(1.07);
       transition: 0.2s;
       box-shadow: 3px 3px 3px #0060b1;
     }
