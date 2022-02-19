@@ -11,16 +11,20 @@ function App() {
     <Wrapper>
       <Header />
       <Home />
-      <About />
+      {/* <About />
       <Disease />
       <Service />
-      <Tests />
+      <Tests /> */}
     </Wrapper>
   );
 }
 
 const Wrapper = styled.div`
-  text-align: center;
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(250, 250, 250);
+  height: 100vh;
 `;
 
 export default App;
