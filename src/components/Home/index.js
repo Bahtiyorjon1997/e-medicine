@@ -28,16 +28,15 @@ const Home = () => {
             ]}
           />
         </h1>
-        <p className="info">
-          <Typical
-            loop={Infinity}
-            wrapper="b"
-            steps={[
-              "We aim to increase people's overall awareness about typical illnesses and medicine!",
-              100,
-            ]}
-          />
-        </p>
+        <div id="quote">
+          <p className="info">
+            Therefore in Medicine We ought to know the causes of sickness and
+            health!
+          </p>
+          <p id="author">
+            <i>- Avicenna</i>
+          </p>
+        </div>
       </div>
     </HomeWrap>
   );
@@ -69,9 +68,21 @@ const HomeWrap = styled.div`
       letter-spacing: 1px;
     }
 
+    #quote {
+      width: 50%;
+      margin: 1rem auto;
+      display: flex;
+      flex-direction: column;
+    }
+
     p.info {
-      margin: 1rem 3rem;
-      font-size: 25px;
+      margin: 1rem auto;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 2px;
+    }
+    #author {
+      text-align: right;
     }
 
     & > img {

@@ -89,10 +89,16 @@ const Header = () => {
   );
 };
 
-const HeaderWrap = styled.header``;
+const HeaderWrap = styled.header`
+  #logo {
+    height: auto;
+    width: 8rem;
+  }
+`;
 
 const TopBar = styled.div`
   /* logo image */
+
   img {
     height: auto;
     width: 8rem;
@@ -103,7 +109,7 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 10rem;
+    padding: 0 8rem;
     color: black;
   }
 
@@ -123,7 +129,7 @@ const TopBar = styled.div`
 
     /* input */
     & > .input-container {
-      width: 30rem;
+      width: 28rem;
       border: 2px solid #0060b1;
       display: flex;
       justify-content: space-between;
