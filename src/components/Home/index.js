@@ -45,7 +45,7 @@ const Home = () => {
 
 const HomeWrap = styled.div`
   width: 100vw;
-  height: calc(100vh - 16rem);
+  height: calc(100vh - 18rem);
   background-image: url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ const HomeWrap = styled.div`
   & > .home-container {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0), #000000ba);
+    background: linear-gradient(180deg, rgba(0, 0, 255, 0.16), #000000ba);
     text-align: center;
     color: white;
     padding: 1rem;

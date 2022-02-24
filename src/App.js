@@ -11,11 +11,10 @@ function App() {
     <Wrapper>
       <Header />
       <Home />
-
       {/* <About />
-      <Disease />
-      <Service />
-      <Tests /> */}
+      {/* <Disease /> */}
+      {/* <Service />
+      <Tests />  */}
     </Wrapper>
   );
 }

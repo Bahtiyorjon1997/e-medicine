@@ -31,9 +31,9 @@ const Header = () => {
             </div>
             <div className="offers">
               <a href={<Home />}>Request Appointment</a>
-              <a href="">Find a Doctor</a>
-              <a href="">Find a Job</a>
-              <a href="">Give New</a>
+              <a href="#">Find a Doctor</a>
+              <a href="#">Find a Job</a>
+              <a href="#">Give New</a>
             </div>
             <div className="social">
               <div className="sign-in">
@@ -92,21 +92,22 @@ const Header = () => {
 const HeaderWrap = styled.header``;
 
 const TopBar = styled.div`
+  /* logo image */
   img {
     height: auto;
     width: 8rem;
-    /* border: 1px solid blue; */
   }
+
+  /* top-bar container */
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 10rem;
     color: black;
-    /* & > div {
-      border: 1px solid black;
-    } */
   }
+
+  /*  */
   .navbar-brand {
     display: flex;
     align-items: left;
@@ -120,6 +121,7 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
 
+    /* input */
     & > .input-container {
       width: 30rem;
       border: 2px solid #0060b1;
@@ -156,6 +158,7 @@ const TopBar = styled.div`
         margin-left: 2%;
       }
     }
+
     .offers {
       display: flex;
       flex-direction: column;
@@ -171,12 +174,14 @@ const TopBar = styled.div`
       }
     }
 
+    /* social network icons */
     .social {
       border-left: 1px solid #2895f1;
       padding-left: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      color: #0060b1;
 
       & > .sign-in {
         display: flex;
@@ -186,16 +191,16 @@ const TopBar = styled.div`
         padding-right: 1rem;
         cursor: pointer;
       }
-    }
 
-    .social > ul {
-      display: flex;
-      justify-content: space-between;
-      width: 7rem;
-    }
+      & > ul {
+        display: flex;
+        justify-content: space-between;
+        width: 7rem;
+      }
 
-    .social > ul > li {
-      list-style-type: none;
+      & > ul > li {
+        list-style-type: none;
+      }
     }
   }
 `;
@@ -203,18 +208,16 @@ const TopBar = styled.div`
 const BottomBar = styled.div`
   width: 100vw;
   min-height: 3rem;
-  background-color: #2895f1;
-  color: white;
+  background-color: rgb(250, 250, 250);
+  color: #0060b1;
 
   & > ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
 
-    /* animation */
-
     & > li {
-      padding: 1.5% 3%;
+      padding: 1% 3%;
       font-weight: 600;
       letter-spacing: 1.5px;
       cursor: pointer;
@@ -224,9 +227,7 @@ const BottomBar = styled.div`
     & > li:hover {
       background-color: rgb(250, 250, 250);
       color: #2895f1;
-      transform: scale(1.07);
       transition: 0.2s;
-      box-shadow: 3px 3px 3px #0060b1;
     }
   }
 `;
