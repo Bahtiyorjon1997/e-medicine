@@ -1,15 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Home from "../Home";
 import logo from "../../assets/e-Medicine.Uz.png";
-import {
-  Search,
-  Facebook,
-  WhatsApp,
-  YouTube,
-  Telegram,
-  Person,
-} from "@material-ui/icons/";
+import { Search } from "@material-ui/icons/";
+import { BsPerson as Person } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -17,7 +10,7 @@ const Header = () => {
       <TopBar>
         <div className="container">
           <div className="navbar-brand">
-            <a href="#">
+            <a href="#home">
               <img src={logo} alt="logo" />
             </a>
           </div>
@@ -29,48 +22,17 @@ const Header = () => {
                 <span>Search</span>
               </div>
             </div>
-            <div className="offers">
-              <a href={<Home />}>Request Appointment</a>
-              <a href="#">Find a Doctor</a>
-              <a href="#">Find a Job</a>
-              <a href="#">Give New</a>
+            <div className="sign-in">
+              <Person class="avatar" />
+              <span>Log in to Patient account</span>
             </div>
-            <div className="social">
-              <div className="sign-in">
-                <Person />
-                <span>sign in</span>
-              </div>
-              <div className="languages">
-                <label for="cars">language: </label>
-                <select id="cars" name="cars">
-                  <option value="english">English</option>
-                  <option value="german">Deutsch</option>
-                  <option value="russian">Russian</option>
-                  <option value="uzbek">Uzbek</option>
-                </select>
-              </div>
-              <ul>
-                <li>
-                  <a href="https://facebook.com">
-                    <Facebook />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://whatsapp.com">
-                    <WhatsApp />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://youtube.com">
-                    <YouTube />
-                  </a>
-                </li>
-                <li>
-                  <a href="https://web.telegram.org">
-                    <Telegram />
-                  </a>
-                </li>
-              </ul>
+            <div className="languages">
+              <select id="lans" name="lans">
+                <option value="english">English</option>
+                <option value="german">Deutsch</option>
+                <option value="russian">Russian</option>
+                <option value="uzbek">Uzbek</option>
+              </select>
             </div>
           </div>
         </div>
@@ -89,16 +51,10 @@ const Header = () => {
   );
 };
 
-const HeaderWrap = styled.header`
-  #logo {
-    height: auto;
-    width: 8rem;
-  }
-`;
+const HeaderWrap = styled.header``;
 
 const TopBar = styled.div`
   /* logo image */
-
   img {
     height: auto;
     width: 8rem;
@@ -109,8 +65,9 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8rem;
+    padding: 0 6rem;
     color: black;
+    position: relative;
   }
 
   /*  */
@@ -123,28 +80,29 @@ const TopBar = styled.div`
   }
 
   .nav-elements {
-    flex: 4;
+    flex: 2;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     /* input */
     & > .input-container {
-      width: 28rem;
+      width: 20rem;
       border: 2px solid #0060b1;
       display: flex;
       justify-content: space-between;
       border-radius: 3px;
       font-size: 16px;
       color: #0060b1;
-      margin: 1rem 0;
+      margin-left: 6%;
     }
     .inpt {
-      height: 3rem;
+      height: 2.5rem;
       outline: none;
       border: none;
       display: inline-block;
       font-size: 16px;
-      flex: 4;
+      flex: 3;
       padding: 0 1rem;
       letter-spacing: 1px;
     }
@@ -157,55 +115,34 @@ const TopBar = styled.div`
       background-color: #0060b1;
       color: white;
       font-weight: 600;
-      flex: 2;
+      flex: 1.5;
       cursor: pointer;
 
       span {
         margin-left: 2%;
       }
     }
-
-    .offers {
+    .sign-in {
       display: flex;
-      flex-direction: column;
       justify-content: space-between;
-      font-size: 13px;
-      height: auto;
-      border-left: 1px solid #2895f1;
-      padding-left: 1rem;
+      align-items: center;
+      padding-right: 1rem;
+      cursor: pointer;
+      font-size: 12px;
+      margin-right: -8rem;
 
-      & > a {
-        text-decoration: none;
-        letter-spacing: 0.5px;
+      .avatar {
+        font-size: 24px;
+        margin-right: 5px;
       }
     }
+    .languages {
+      font-size: 12px;
+      border: 1px solid black;
 
-    /* social network icons */
-    .social {
-      border-left: 1px solid #2895f1;
-      padding-left: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #0060b1;
-
-      & > .sign-in {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 6rem;
-        padding-right: 1rem;
-        cursor: pointer;
-      }
-
-      & > ul {
-        display: flex;
-        justify-content: space-between;
-        width: 7rem;
-      }
-
-      & > ul > li {
-        list-style-type: none;
+      & > select {
+        outline: 0;
+        border: none;
       }
     }
   }

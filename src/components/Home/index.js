@@ -3,10 +3,12 @@ import React from "react";
 import bgImg from "../../assets/online-med.png";
 import Img from "../../assets/e-Medicine.UzHome.png";
 import Typical from "react-typical";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsArrowRight } from "react-icons/bs";
 
 const Home = () => {
   return (
-    <HomeWrap>
+    <HomeWrap id="home">
       <div className="home-container">
         <img src={Img} alt="" />
         <h1>
@@ -37,6 +39,20 @@ const Home = () => {
             <i>- Avicenna</i>
           </p>
         </div>
+        <div className="offers">
+          <div className="offer">
+            Find a disease <AiOutlineArrowRight class="short-icon" />
+            <BsArrowRight class="longer-icon" />
+          </div>
+          <div className="offer">
+            Find a pharmacy <AiOutlineArrowRight class="short-icon" />
+            <BsArrowRight class="longer-icon" />
+          </div>
+          <div className="offer">
+            Find a doctor <AiOutlineArrowRight class="short-icon" />
+            <BsArrowRight class="longer-icon" />
+          </div>
+        </div>
       </div>
     </HomeWrap>
   );
@@ -59,6 +75,7 @@ const HomeWrap = styled.div`
     color: white;
     padding: 1rem;
     z-index: 100;
+    position: relative;
 
     h1 {
       font-family: "Courier Prime", monospace;
@@ -83,6 +100,53 @@ const HomeWrap = styled.div`
     }
     #author {
       text-align: right;
+    }
+
+    .offers {
+      width: 70%;
+      height: auto;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      bottom: -2.7rem;
+      left: 15%;
+      font-size: 1.5rem;
+      border-radius: 5px;
+
+      & > .offer {
+        padding: 2rem;
+        background-color: #004175;
+        text-align: center;
+        width: ${100 / 3}%;
+        cursor: pointer;
+        letter-spacing: 1px;
+        background: linear-gradient(145deg, #003b69, #00467d);
+        border: 2px solid #004175;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        transition: 0.2s;
+
+        .longer-icon {
+          display: none;
+        }
+      }
+
+      & > .offer:hover {
+        /* border: 2px solid #fff; */
+        transition: 0.2s;
+        text-decoration: underline;
+
+        .longer-icon {
+          display: initial;
+          transition: 5s;
+        }
+        .short-icon {
+          display: none;
+          transition: 5s;
+        }
+      }
     }
 
     & > img {
