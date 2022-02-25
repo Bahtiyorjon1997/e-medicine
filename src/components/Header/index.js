@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../../assets/e-Medicine.Uz.png";
 import { Search } from "@material-ui/icons/";
 import { BsPerson as Person } from "react-icons/bs";
+import { AiOutlineBulb as On, AiFillBulb as Off } from "react-icons/ai";
 
 const Header = () => {
+  const [bulbOn, setBulbOn] = useState(true);
+  const [lan, setLan] = useState(true);
+
+  const handleLanClick = () => {
+    setLan(!lan);
+  };
+
+  const handleClick = () => {
+    setBulbOn(!bulbOn);
+  };
   return (
     <HeaderWrap>
       <TopBar>
@@ -23,16 +34,15 @@ const Header = () => {
               </div>
             </div>
             <div className="sign-in">
-              <Person class="avatar" />
-              <span>Log in to Patient account</span>
-            </div>
-            <div className="languages">
-              <select id="lans" name="lans">
-                <option value="english">English</option>
-                <option value="german">Deutsch</option>
-                <option value="russian">Russian</option>
-                <option value="uzbek">Uzbek</option>
-              </select>
+              <div className="languages icon">
+                <Person class="avatar" />
+              </div>
+              <div className="languages" onClick={handleLanClick}>
+                {lan ? "EN" : "DE"}
+              </div>
+              <div className="languages" onClick={handleClick}>
+                {bulbOn ? <Off className="icon" /> : <On className="icon" />}
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +61,9 @@ const Header = () => {
   );
 };
 
-const HeaderWrap = styled.header``;
+const HeaderWrap = styled.header`
+  @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400;1,700&display=swap");
+`;
 
 const TopBar = styled.div`
   /* logo image */
@@ -126,23 +138,27 @@ const TopBar = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-right: 1rem;
-      cursor: pointer;
-      font-size: 12px;
-      margin-right: -8rem;
 
-      .avatar {
-        font-size: 24px;
-        margin-right: 5px;
-      }
-    }
-    .languages {
-      font-size: 12px;
-      border: 1px solid black;
+      .languages {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px double #0060b1;
+        border-radius: 50%;
+        color: #0060b1;
+        margin: 5px;
+        cursor: pointer;
 
-      & > select {
-        outline: 0;
-        border: none;
+        & > select {
+          outline: 0;
+          border: none;
+        }
+
+        .icon {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -153,6 +169,8 @@ const BottomBar = styled.div`
   min-height: 3rem;
   background-color: rgb(250, 250, 250);
   color: #0060b1;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700 !important;
 
   & > ul {
     display: flex;
@@ -160,9 +178,9 @@ const BottomBar = styled.div`
     list-style-type: none;
 
     & > li {
+      font-size: 1.2rem;
       padding: 1% 3%;
-      font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       cursor: pointer;
       transition: 0.2s;
     }
