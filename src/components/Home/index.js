@@ -6,50 +6,73 @@ import Typical from "react-typical";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { BsArrowRight } from "react-icons/bs";
 
-const Home = () => {
+const Home = ({ lan, handleLanClick }) => {
   return (
     <HomeWrap id="home">
       <div className="home-container">
         <img src={Img} alt="" />
         <h1>
-          We
-          <Typical
-            loop={Infinity}
-            wrapper="b"
-            steps={[
-              "lcome to e-Medicine.Uz!",
-              1000,
-              " are Experts!",
-              1000,
-              " are biggest medical database!",
-              1000,
-              " care about your health!",
-              1000,
-              " love you!",
-              1000,
-            ]}
-          />
+          {lan ? "Biz" : "We"}
+          {lan ? (
+            <Typical
+              loop={Infinity}
+              wrapper="b"
+              steps={[
+                " Sizni Qutlaymiz!",
+                1000,
+                " Expertlardirmiz!",
+                1000,
+                " Eng Yirik Med. Ma'lumotlar Omboriga egamiz!",
+                1000,
+                " Siz haqingizda Qayg'uramiz",
+                1000,
+                "Sizni Yaxshi Ko'ramiz!",
+                1000,
+              ]}
+            />
+          ) : (
+            <Typical
+              loop={Infinity}
+              wrapper="b"
+              steps={[
+                "lcome to e-Medicine.Uz!",
+                3000,
+                " are Experts!",
+                3000,
+                " are biggest medical database!",
+                3000,
+                " care about your health!",
+                3000,
+                " love you!",
+                3000,
+              ]}
+            />
+          )}
         </h1>
         <div id="quote">
           <p className="info">
-            Therefore in Medicine We ought to know the causes of sickness and
-            health!
+            {lan
+              ? "Kasallikni davolagandan uni oldini olgan afzaldir!"
+              : "Therefore in Medicine We ought to know the causes of sickness and health!"}
           </p>
           <p id="author">
-            <i>- Avicenna</i>
+            <i>- {lan ? "Ibn Sino" : "Avicena"}</i>
           </p>
         </div>
         <div className="offers">
           <div className="offer">
-            Find a disease <AiOutlineArrowRight class="short-icon" />
+            {lan ? "Kasallik Izlash" : "Find a Disease"}
+            <AiOutlineArrowRight class="short-icon" />
             <BsArrowRight class="longer-icon" />
           </div>
           <div className="offer">
-            Find a pharmacy <AiOutlineArrowRight class="short-icon" />
+            {lan ? "Dori izlash" : "Find a Parmacy"}
+            <AiOutlineArrowRight class="short-icon" />
             <BsArrowRight class="longer-icon" />
           </div>
           <div className="offer">
-            Find a doctor <AiOutlineArrowRight class="short-icon" />
+            {lan ? "Shifokor izlash" : "Find a Doctor"}
+            <AiOutlineArrowRight class="short-icon" />
             <BsArrowRight class="longer-icon" />
           </div>
         </div>

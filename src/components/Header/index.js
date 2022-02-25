@@ -5,19 +5,14 @@ import { Search } from "@material-ui/icons/";
 import { BsPerson as Person } from "react-icons/bs";
 import { AiOutlineBulb as On, AiFillBulb as Off } from "react-icons/ai";
 
-const Header = () => {
+const Header = ({ lan, handleLanClick }) => {
   const [bulbOn, setBulbOn] = useState(true);
-  const [lan, setLan] = useState(true);
-
-  const handleLanClick = () => {
-    setLan(!lan);
-  };
 
   const handleClick = () => {
     setBulbOn(!bulbOn);
   };
   return (
-    <HeaderWrap>
+    <HeaderWrap className={bulbOn ? "dark-bg" : "light-bg"}>
       <TopBar>
         <div className="container">
           <div className="navbar-brand">
@@ -27,34 +22,40 @@ const Header = () => {
           </div>
           <div className="nav-elements">
             <div className="input-container">
-              <input type="text" placeholder="Search" className="inpt" />
+              <input
+                type="text"
+                placeholder={lan ? "Qidirish" : "Search"}
+                className="inpt"
+              />
               <div className="search">
                 <Search />
-                <span>Search</span>
+                <span>{lan ? "Qidirish" : "Search"}</span>
               </div>
             </div>
-            <div className="sign-in">
-              <div className="languages icon">
-                <Person class="avatar" />
-              </div>
-              <div className="languages" onClick={handleLanClick}>
-                {lan ? "EN" : "DE"}
-              </div>
-              <div className="languages" onClick={handleClick}>
-                {bulbOn ? <Off className="icon" /> : <On className="icon" />}
-              </div>
+          </div>
+          <div className="sign-in">
+            <div className="languages icon">
+              <Person class="avatar" />
+            </div>
+            <div className="languages" onClick={handleLanClick}>
+              {!lan ? "EN" : "UZ"}
+            </div>
+            <div className="languages" onClick={handleClick}>
+              {bulbOn ? <Off className="icon" /> : <On className="icon" />}
             </div>
           </div>
         </div>
       </TopBar>
-      <BottomBar>
+      <BottomBar className={bulbOn ? "dark-bg" : "light-bg"}>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Diseases</li>
-          <li>Tests</li>
-          <li>Contacts</li>
+          <li>{lan ? "Sog'lik to'grisida" : "Helth  Information"}</li>
+          <li>
+            {lan ? "Meditsina  Hodimlariga" : "For Medical  Professionals"}
+          </li>
+          <li>{lan ? "Bizning Hizmatlar" : "Our Services"}</li>
+          <li>{lan ? "Kasalliklar" : "Diseases & Illnesses"}</li>
+          <li>{lan ? "Testlar" : "Tests"}</li>
+          <li>{lan ? "Aloqa" : "Contacts"}</li>
         </ul>
       </BottomBar>
     </HeaderWrap>
@@ -63,9 +64,24 @@ const Header = () => {
 
 const HeaderWrap = styled.header`
   @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400;1,700&display=swap");
+
+  .dark {
+    background-color: #0060b1 !important;
+  }
+
+  .light {
+    background-color: #fff !important;
+  }
 `;
 
 const TopBar = styled.div`
+  .dark {
+    background-color: #0060b1 !important;
+  }
+
+  .light {
+    background-color: #fff !important;
+  }
   /* logo image */
   img {
     height: auto;
@@ -77,9 +93,39 @@ const TopBar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 6rem;
+    width: 88%;
+    margin: 0 auto;
     color: black;
     position: relative;
+
+    .sign-in {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid white;
+
+      .languages {
+        width: 3rem;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px double #0060b1;
+        border-radius: 50%;
+        color: #0060b1;
+        margin: 5px;
+        cursor: pointer;
+
+        & > select {
+          outline: 0;
+          border: none;
+        }
+
+        .icon {
+          font-size: 1.4rem;
+        }
+      }
+    }
   }
 
   /*  */
@@ -92,21 +138,22 @@ const TopBar = styled.div`
   }
 
   .nav-elements {
-    flex: 2;
+    flex: 2.7;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     /* input */
     & > .input-container {
-      width: 20rem;
+      width: 50%;
       border: 2px solid #0060b1;
       display: flex;
       justify-content: space-between;
       border-radius: 3px;
       font-size: 16px;
       color: #0060b1;
-      margin-left: 6%;
+      position: absolute;
+      left: 25%;
     }
     .inpt {
       height: 2.5rem;
@@ -134,40 +181,22 @@ const TopBar = styled.div`
         margin-left: 2%;
       }
     }
-    .sign-in {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .languages {
-        width: 3rem;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px double #0060b1;
-        border-radius: 50%;
-        color: #0060b1;
-        margin: 5px;
-        cursor: pointer;
-
-        & > select {
-          outline: 0;
-          border: none;
-        }
-
-        .icon {
-          font-size: 1.4rem;
-        }
-      }
-    }
   }
 `;
 
 const BottomBar = styled.div`
-  width: 100vw;
+  .dark {
+    background-color: #0060b1 !important;
+  }
+
+  .light {
+    background-color: #fff !important;
+  }
+
+  width: 92%;
+  margin: 0 auto;
   min-height: 3rem;
-  background-color: rgb(250, 250, 250);
+  /* background-color: rgb(250, 250, 250); */
   color: #0060b1;
   font-family: "Courier Prime", monospace;
   font-weight: 700 !important;

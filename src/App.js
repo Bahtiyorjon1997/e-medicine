@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -7,9 +8,16 @@ import Home from "./components/Home";
 // import Tests from "./components/Tests";
 
 function App() {
+  const [lan, setLan] = useState(true);
+
+  const handleLanClick = () => {
+    setLan(!lan);
+  };
   return (
     <Wrapper>
-      <Header />
+      <Header lan={lan} handleLanClick={handleLanClick} />
+      <Home lan={lan} handleLanClick={handleLanClick} />
+      <Home />
       <Home />
       {/* <About />
       {/* <Disease /> */}
