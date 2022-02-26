@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import logo from "../../assets/e-Medicine.Uz.png";
 import { Search } from "@material-ui/icons/";
@@ -16,9 +17,11 @@ const Header = ({ lan, handleLanClick }) => {
       <TopBar>
         <div className="container">
           <div className="navbar-brand">
-            <a href="#home">
-              <img src={logo} alt="logo" />
-            </a>
+            <Fade top>
+              <a href="#home">
+                <img src={logo} alt="logo" />
+              </a>
+            </Fade>
           </div>
           <div className="nav-elements">
             <div className="input-container">

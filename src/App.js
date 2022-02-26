@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Header from "./components/Header";
 import Home from "./components/Home";
-// import About from "./components/About";
+import About from "./components/About";
 // import Disease from "./components/Diseases";
 // import Service from "./components/Service";
 // import Tests from "./components/Tests";
@@ -17,9 +17,7 @@ function App() {
     <Wrapper>
       <Header lan={lan} handleLanClick={handleLanClick} />
       <Home lan={lan} handleLanClick={handleLanClick} />
-      <Home />
-      <Home />
-      {/* <About />
+      <About />
       {/* <Disease /> */}
       {/* <Service />
       <Tests />  */}
@@ -34,6 +32,7 @@ const Wrapper = styled.div`
   font-family: "Poppins", sans-serif;
   background-color: rgb(250, 250, 250);
   height: 100vh;
+  scroll-behavior: smooth;
 `;
 
 export default App;
