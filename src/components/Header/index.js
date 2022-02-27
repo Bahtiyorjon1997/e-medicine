@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import useSound from "use-sound";
 import Fade from "react-reveal/Fade";
 import styled from "styled-components";
 import logo from "../../assets/e-Medicine.Uz.png";
 import { Search } from "@material-ui/icons/";
 import { BsPerson as Person } from "react-icons/bs";
 import { AiOutlineBulb as On, AiFillBulb as Off } from "react-icons/ai";
+import bulb from "../../assets/sounds/bulb.wav";
 
 const Header = ({ lan, handleLanClick }) => {
   const [bulbOn, setBulbOn] = useState(true);
+  const [play] = useSound(bulb);
 
   const handleClick = () => {
     setBulbOn(!bulbOn);
+    play();
   };
   return (
     <HeaderWrap className={bulbOn ? "dark-bg" : "light-bg"}>

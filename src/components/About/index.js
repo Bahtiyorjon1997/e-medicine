@@ -72,8 +72,8 @@ const AboutWrap = styled.div`
     & > .left-div {
       & > .about-title {
         font-size: 3rem;
-        letter-spacing: 2px;
-        font-weight: 600;
+        letter-spacing: 1.5px;
+        font-weight: 500;
         margin-bottom: 2rem;
       }
 

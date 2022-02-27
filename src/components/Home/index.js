@@ -104,7 +104,7 @@ const HomeWrap = styled.div`
     h1 {
       font-family: "Courier Prime", monospace;
       margin-top: -1.5rem;
-      font-size: 4rem;
+      font-size: 3.5rem;
       font-weight: 700;
       letter-spacing: 1px;
     }
