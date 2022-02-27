@@ -1,26 +1,56 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../../assets/e-Medicine.Uz.png";
+import {
+  FaStethoscope as MedTool,
+  FaRegClipboard as Board,
+  FaHandHoldingHeart as Heart,
+} from "react-icons/fa";
+import { ImAccessibility as HappyIcon } from "react-icons/im";
 
 const About = () => {
   return (
     <AboutWrap>
       <section className="about">
-        <div className="logo-image-big">
-          <img src={logo} alt="" />
+        <div className="left-div">
+          <h2 className="about-title">
+            Why to choose <br />
+            e-medicine.uz?
+          </h2>
+          <button className="btn-about">Learn more about e-medicine.uz</button>
         </div>
-        <div className="text-about">
-          <h2>E-Medicine.Uz</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis
-            itaque tempore tempora quis alias, doloribus maiores deserunt sit
-            dolores ad commodi optio nesciunt placeat fuga pariatur magnam
-            voluptatem non repudiandae. Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Assumenda, aliquam? Minima, mollitia atque!
-            Perspiciatis, iusto voluptatem? Laboriosam nisi, delectus tenetur et
-            impedit excepturi laudantium reprehenderit, molestias dolorum,
-            tempora accusantium praesentium.
-          </p>
+        <div className="right-div">
+          <div className="one">
+            <MedTool className="icon1" />
+            <h3>Innovation</h3>
+            <p>
+              The million patients we treat each year prepares us to treat the
+              one who matters most—you.
+            </p>
+          </div>
+          <div className="two">
+            <Board className="icon1" />
+            <h3>The right answers</h3>
+            <p>
+              Count on our experts to deliver an accurate diagnosis and the
+              right plan for you the first time.
+            </p>
+          </div>
+          <div className="three">
+            <Heart className="icon1" />
+            <h3>You come first</h3>
+            <p>
+              Treatment at Mayo Clinic is a truly human experience. You’re cared
+              for as a person first.
+            </p>
+          </div>
+          <div className="four">
+            <HappyIcon className="icon1" />
+            <h3> Impact</h3>
+            <p>
+              All of our patient care, education and research are driven to make
+              discoveries that can help heal you.
+            </p>
+          </div>
         </div>
       </section>
     </AboutWrap>
@@ -29,45 +59,69 @@ const About = () => {
 
 const AboutWrap = styled.div`
   width: 100vw;
-  height: 80%;
+  height: 100vh;
+  padding: 6% 4%;
   background-color: rgb(250, 250, 250);
 
   .about {
-    padding: 10%;
+    height: 100%;
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .about > div {
-    flex: 1;
-    height: 70%;
-  }
-
-  .about > .logo-image-big {
-    img {
-      width: 80%;
-      border: 5px solid #0060b1;
-      border-radius: 50%;
-    }
-  }
-
-  .about > .text-about {
     color: #0060b1;
 
-    h2 {
-      margin-bottom: 2rem;
-      font-size: xx-large;
-      letter-spacing: 3px;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-    p {
-      letter-spacing: 1px;
+    & > .left-div {
+      & > .about-title {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-bottom: 2rem;
+      }
 
-      line-height: 20px;
-      font-size: 14px;
+      & > .btn-about {
+        padding: 1.2rem 1.5rem;
+        font-size: 16px;
+        border-radius: 2rem;
+        border: none;
+        background-color: #0060b1;
+        color: rgb(250, 250, 250);
+        cursor: pointer;
+      }
     }
+  }
+
+  .about > .left-div {
+    flex: 2;
+  }
+
+  .about > .right-div {
+    flex: 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8rem;
+  }
+
+  .right-div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-top: 1px solid blue;
+  }
+
+  .right-div > div > .icon1 {
+    font-size: 2rem;
+  }
+  .right-div > div > h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+  }
+
+  .right-div > div > p {
+    letter-spacing: 1px;
+    line-height: 2rem;
+  }
+
+  .right-div > .one {
   }
 `;
 export default About;

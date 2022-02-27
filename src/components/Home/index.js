@@ -19,15 +19,15 @@ const Home = ({ lan, handleLanClick }) => {
               wrapper="b"
               steps={[
                 " Sizni Qutlaymiz!",
-                1000,
+                2000,
                 " Expertlardirmiz!",
-                1000,
-                " Eng Yirik Med. Ma'lumotlar Omboriga egamiz!",
-                1000,
+                2000,
+                " Eng Yirik Data Base miz!",
+                2000,
                 " Siz haqingizda Qayg'uramiz",
-                1000,
+                2000,
                 "Sizni Yaxshi Ko'ramiz!",
-                1000,
+                2000,
               ]}
             />
           ) : (
@@ -36,15 +36,15 @@ const Home = ({ lan, handleLanClick }) => {
               wrapper="b"
               steps={[
                 "lcome to e-Medicine.Uz!",
-                3000,
+                2000,
                 " are Experts!",
-                3000,
+                2000,
                 " are biggest medical database!",
-                3000,
+                2000,
                 " care about your health!",
-                3000,
+                2000,
                 " love you!",
-                3000,
+                2000,
               ]}
             />
           )}
@@ -83,7 +83,8 @@ const Home = ({ lan, handleLanClick }) => {
 
 const HomeWrap = styled.div`
   width: 100vw;
-  height: calc(100vh - 18rem);
+  height: calc(100% - 18rem);
+  margin-bottom: 2.7rem;
   background-image: url(${bgImg});
   background-size: cover;
   background-repeat: no-repeat;
@@ -160,6 +161,7 @@ const HomeWrap = styled.div`
         /* border: 2px solid #fff; */
         transition: 0.2s;
         text-decoration: underline;
+        transform: scale(1.1);
 
         .longer-icon {
           display: initial;

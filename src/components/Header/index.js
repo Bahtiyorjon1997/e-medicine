@@ -105,7 +105,6 @@ const TopBar = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border: 1px solid white;
 
       .languages {
         width: 3rem;
@@ -113,11 +112,18 @@ const TopBar = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px double #0060b1;
+        /* border: 1px double #0060b1; */
         border-radius: 50%;
         color: #0060b1;
         margin: 5px;
         cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 6px 6px 12px #d2d2d2, -6px -6px 12px #ffffff;
+
+        &:hover {
+          box-shadow: inset 6px 6px 12px #d2d2d2, inset -6px -6px 12px #ffffff;
+          transition: 0.2s;
+        }
 
         & > select {
           outline: 0;
@@ -215,6 +221,9 @@ const BottomBar = styled.div`
       letter-spacing: 2px;
       cursor: pointer;
       transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     & > li:hover {
