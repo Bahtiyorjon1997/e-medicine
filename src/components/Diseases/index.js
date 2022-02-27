@@ -43,6 +43,12 @@ const Disease = () => {
             <span> Cancer</span>
             <span>Breast Cancer</span>
           </div>
+          <div className="btm symptom">
+            <a href="https://www.mayoclinic.org/symptom-checker/select-symptom/itt-20009075">
+              See more Diseases and Conditions
+            </a>
+            <Arrow />
+          </div>
         </div>
       </section>
     </DiseaseWrap>
@@ -50,7 +56,7 @@ const Disease = () => {
 };
 const DiseaseWrap = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   padding: 6% 4%;
   background-color: rgb(250, 250, 250);
   border-top: 1px solid #0060b1;
@@ -60,10 +66,6 @@ const DiseaseWrap = styled.div`
     width: 100%;
     display: flex;
     gap: 5rem;
-  }
-
-  .disease > div {
-    /* border: 1px solid blue; */
   }
 
   .disease > .disease-right {
@@ -96,13 +98,20 @@ const DiseaseWrap = styled.div`
       flex-wrap: wrap;
       gap: 1rem;
       margin: 1rem 0;
+      padding: 0.5rem 0;
     }
+
+    .btm {
+      border-top: 1px solid #0060b1;
+    }
+
     .most-visited > span {
       padding: 0.5rem 1rem;
       border-radius: 3rem;
       border: 1px solid #0060b1;
       cursor: pointer;
     }
+
     .most-visited > span:hover {
       background-color: #0060b1;
       color: rgb(250, 250, 250);
