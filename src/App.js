@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import Disease from "./components/Diseases";
+import Covid from "./components/Covid";
 // import Service from "./components/Service";
 // import Tests from "./components/Tests";
 
@@ -18,6 +19,7 @@ function App() {
       <Header lan={lan} handleLanClick={handleLanClick} />
       <Home lan={lan} handleLanClick={handleLanClick} />
       <About />
+      <Covid />
       <Disease />
       {/* <Service />
       <Tests />  */}
@@ -28,6 +30,7 @@ function App() {
 const Wrapper = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400;1,700&display=swap");
 
   font-family: "Poppins", sans-serif;
   background-color: rgb(250, 250, 250);

@@ -70,8 +70,6 @@ const Header = ({ lan, handleLanClick }) => {
 };
 
 const HeaderWrap = styled.header`
-  @import url("https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;1,400;1,700&display=swap");
-
   .dark {
     background-color: #0060b1 !important;
   }
