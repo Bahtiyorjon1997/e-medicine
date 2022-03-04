@@ -59,7 +59,7 @@ const DiseaseWrap = styled.div`
   height: fit-content;
   padding: 6% 4%;
   background-color: rgb(250, 250, 250);
-  border-top: 1px solid #0060b1;
+  /* border-top: 1px solid #0060b1; */
 
   .disease {
     height: 100%;
