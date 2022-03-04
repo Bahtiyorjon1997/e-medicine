@@ -123,6 +123,10 @@ const TopBar = styled.div`
         box-shadow: 6px 6px 12px #d2d2d2, -6px -6px 12px #ffffff;
 
         &:hover {
+          background-color: #f1ecec;
+        }
+
+        &:active {
           box-shadow: inset 6px 6px 12px #d2d2d2, inset -6px -6px 12px #ffffff;
           transition: 0.2s;
         }
