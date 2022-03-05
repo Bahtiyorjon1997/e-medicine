@@ -88,6 +88,10 @@ const DiseaseWrap = styled.div`
       font-size: 1rem;
       margin-bottom: 2rem;
 
+      &:hover {
+        text-decoration: underline;
+      }
+
       & > a {
         text-decoration: none;
       }

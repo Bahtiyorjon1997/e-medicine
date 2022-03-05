@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import bmi from "../../assets/bmi.jpeg";
 
 const Services = () => {
   return (
@@ -16,7 +17,8 @@ const Services = () => {
 };
 
 const ServicesWrap = styled.div`
+  background-color: rgb(250, 250, 250);
   width: 100%;
-  height: 80%;
+  height: 100%;
 `;
 export default Services;

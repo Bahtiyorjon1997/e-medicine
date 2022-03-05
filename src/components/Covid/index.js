@@ -11,10 +11,8 @@ const Covid = () => {
           Covid<br></br> Information
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-          possimus vero facilis distinctio soluta quas dicta autem iusto quasi
-          nobis natus vel nisi, eius aspernatur quod praesentium incidunt nemo
-          corrupti?
+          Find maps and charts tracking cases, deaths, and trends of COVID-19 in
+          the United States, updated daily.
         </p>
         <button>Go to have more info</button>
       </div>
@@ -63,6 +61,7 @@ const CovidContainer = styled.div`
       font-size: 1rem;
       margin-bottom: 5%;
       letter-spacing: 1px;
+      width: 80%;
     }
     button {
       padding: 1rem 1rem;
