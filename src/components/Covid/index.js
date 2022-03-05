@@ -65,14 +65,15 @@ const CovidContainer = styled.div`
       letter-spacing: 1px;
     }
     button {
-      padding: 0.8rem 1rem;
-      width: 50%;
+      padding: 1rem 1rem;
+      width: 60%;
       font-size: 1rem;
       background-color: #0060b1;
       color: white;
       border-radius: 2rem;
       border: none;
       cursor: pointer;
+      letter-spacing: 1px;
     }
   }
 `;

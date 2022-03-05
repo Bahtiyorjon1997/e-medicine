@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import About from "./components/About";
 import Disease from "./components/Diseases";
 import Covid from "./components/Covid";
-// import Service from "./components/Service";
+import Service from "./components/Service";
 // import Tests from "./components/Tests";
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
       <About />
       <Covid />
       <Disease />
-      {/* <Service />
-      <Tests />  */}
+      <Service />
+      {/* <Tests /> */}
     </Wrapper>
   );
 }
