@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import bmi from "../../assets/bmi.jpeg";
 
 const Services = () => {
   return (

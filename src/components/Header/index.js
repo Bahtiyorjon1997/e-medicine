@@ -45,7 +45,7 @@ const Header = ({ lan, handleLanClick }) => {
               <Person class="avatar" />
             </div>
             <div className="languages" onClick={handleLanClick}>
-              {!lan ? "EN" : "UZ"}
+              {lan ? "EN" : "UZ"}
             </div>
             <div className="languages" onClick={handleClick}>
               {bulbOn ? <Off className="icon" /> : <On className="icon" />}

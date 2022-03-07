@@ -20,8 +20,8 @@ function App() {
       <Home lan={lan} handleLanClick={handleLanClick} />
       <About />
       <Covid />
-      <Service />
       <Disease />
+      <Service />
       {/* <Tests /> */}
     </Wrapper>
   );
